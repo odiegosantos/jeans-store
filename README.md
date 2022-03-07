@@ -27,7 +27,7 @@
 
 ## :dart: About ##
 
-Jeans store website made with HTML, CSS, Javascript and Bootstrap. 
+jeans clothing store made with HTML, CSS, Javascript and Bootstrap.
 
 ## :sparkles: Features ##
 
