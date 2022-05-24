@@ -6,6 +6,7 @@
 
 <h1 align="center">Jeans Store</h1>
 
+<img src="https://user-images.githubusercontent.com/87211192/170038078-618661fa-b58e-4586-b589-2aecb9c9357e.PNG" />
 <p align="center">
 
   <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{odiegosantos}}/?color=56BEB8" /> -->
