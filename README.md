@@ -33,7 +33,7 @@ jeans clothing store made with HTML, CSS, Javascript and Bootstrap.
 ## :sparkles: Features ##
 
 :heavy_check_mark: Feature 1 \
-:x: Make features \
+:heavy_check_mark: Make features \
 :x: Finished Project
 
 ## :rocket: Technologies ##
