@@ -1,9 +1,16 @@
+/* ---------------------------------------- Reset ---------------------------------------- */
 * {
   margin: 0;
   padding: 0;
   list-style: none;
   box-sizing: border-box;
 }
+
+#btn-mobile {
+  display: none;
+}
+
+/* ---------------------------------------- Header ---------------------------------------- */
 header {
   width: 100vw;
   padding: .5rem;
@@ -12,95 +19,105 @@ header {
   justify-content: space-between;
   background: #012744;
 }
-header .logo {
+
+.logo {
   cursor: pointer;
 }
-.navigation__menu {
+
+/* ---------------------------------------- Navigation ---------------------------------------- */
+.navigation .menu {
   display: flex;
 }
-.navigation__menu a {
-  padding: 0 1rem;
-  font-size: 1.5rem;
-  color: #fff;
+
+.navigation .menu a {
+  padding: 1rem;
+  font-size: 1.2rem;
   text-decoration: none;
-} 
+}
+
+.navigation .menu a:hover {
+  color: #ff0000;
+}
+
+/* ---------------------------------------- Carousel item ---------------------------------------- */
 .carousel-item {
   height: 80vh;
 }
-.carousel-item > img {
+
+.carousel-item>img {
   width: 100%;
-  background-position: center;
   background-size: cover;
-}
-@media (min-width: 40em) {
-  .carousel-caption p {
-    margin-bottom: 1.25rem;
-    font-size: 1.25rem;
-    line-height: 1.4;
-  }
-
-  .featurette-heading {
-    font-size: 50px;
-  }
+  background-position: center;
 }
 
-@media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 7rem;
-  }
-}
+/* ---------------------------------------- Responsive Button---------------------------------------- */
 @media (max-width: 600px) {
+  #btn-mobile {
+    padding: 0.5rem 1rem;
+    display: flex;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  /* ---------------------------------------- Responsive carousel ---------------------------------------- */
+  .carousel-item>img {
+    height: 100%;
+  }
+
+  /* ---------------------------------------- Responsive menu ---------------------------------------- */
   .menu {
-    display: block;
     position: absolute;
+    z-index: 1000;
     width: 100%;
     height: 0;
-    top: 70px;
     right: 0;
-    background: #fff;
-    transition: .6s;
-    z-index: 1000;
     visibility: hidden;
     overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #012744;
+    transition: .6s;
   }
+
+  .menuBurger {
+    width: 20px;
+    display: block;
+    border-top: 2px solid;
+  }
+
+  .menuBurger::after,
+  .menuBurger::before {
+    position: relative;
+    width: 20px;
+    height: 2px;
+    margin-top: 5px;
+    content: '';
+    display: block;
+    background: currentColor;
+    transition: .3s;
+  }
+
+  /* ---------------------------------------- Responsive navigation ---------------------------------------- */
+  .navigation.active .menuBurger {
+    border-top-color: transparent;
+  }
+
+  .navigation.active .menuBurger::before {
+    transform: rotate(135deg);
+  }
+
+  .navigation.active .menuBurger::after {
+    top: -7px;
+    transform: rotate(-135deg);
+  }
+
   .navigation.active .menu {
     height: calc(100vh - 70px);
     visibility: visible;
     overflow-y: auto;
-  }
-  .btn-mobile {
-    display: flex;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    gap: .5rem;
-  }
-  .btn-menu {
-    display: block;
-    width: 20px;
-    border-top: 2px solid;
-  }
-  .btn-menu::after, .btn-menu::before {
-    content: '';
-    display: block;
-    width: 20px;
-    height: 2px;
-    background: currentColor;
-    margin-top: 5px;
-    position: relative;
-    transition: .3s;
-  }
-  .navigation.active .btn-menu {
-    border-top-color: transparent;
-    background-color: rgb(0, 0, 0);
-  }
-  .navigation.active .btn-menu::before {
-    transform: rotate(135deg);
-    color: red;
-  }
-  .navigation.active .btn-menu::after {
-    transform: rotate(-135deg);
-    color: blue;
-    top: -7px;
   }
 }
